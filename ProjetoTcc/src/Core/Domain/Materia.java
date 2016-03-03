@@ -1,4 +1,6 @@
-package Core;
+package Core.Domain;
+
+import Core.Domain.Disciplina;
 
 /**
  *

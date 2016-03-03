@@ -1,8 +1,10 @@
-package Services;
+package Core.Service;
 
-import Core.Disciplina;
-import Core.Materia;
-import Core.Professor;
+import Core.Domain.Disciplina;
+import Core.Domain.Horario;
+import Core.Domain.Materia;
+import Core.Domain.Populacao;
+import Core.Domain.Professor;
 import java.util.ArrayList;
 
 /**
@@ -225,8 +227,42 @@ public class TesteService
     {
         for(Materia obj : materias)
         {
-            System.out.println("Cod.:"+obj.getCodigoMateria());
+            System.out.println("Cod.:"+obj.getCodigoMateria()+", "+obj.getDisciplina().getPeriodo()+"º Período");
         }
+    }
+    
+    public static void exibirPopulacao(Populacao populacao)
+    {
+        ArrayList<Horario> horarios = populacao.getIndividuos();
+        int i = 1;
+        for(Horario horario : horarios)
+        {
+            System.out.println("Indivíduo nº"+i+":");
+            TesteService.exibirHorario(horario.getHorario());
+            i++;
+        }
+    }
+    
+    public static void exibirHorario(String horario)
+    {
+        horario = horario.replace("]", "");
+        horario = horario.replace("[", "");
+        horario = horario.replace(" ", "");
+        String[] arrayHorario = horario.split(",");
+        for(int i = 0; i < arrayHorario.length; i++)
+        {
+            System.out.print(arrayHorario[i] + ",");
+            switch(i)
+            {
+                case 24:
+                case 49:
+                case 74:
+                case 99:
+                case 124:
+                    System.out.println();
+            }
+        }
+        System.out.println();
     }
     
     public TesteService()
