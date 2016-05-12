@@ -178,6 +178,21 @@ public class TesteService
         return disponibilidade;
     }
     
+    private Integer[] fornecerDisponibilidadeAleatoria(Integer qtdeHorarios)
+    {
+        Integer[] disponibilidade = new Integer[25];
+        Integer[] posicoes = new Integer[qtdeHorarios];
+        for(Integer pos : posicoes)
+        {
+            pos = (int)(Math.random()*26);
+        }
+        for(Integer pos : posicoes)
+        {
+            disponibilidade[pos] = 1;
+        }
+        return disponibilidade;
+    }
+    
     private Materia instanciarMateria(String codDisciplina, String codProfessor, ArrayList<Professor> professores, ArrayList<Disciplina> disciplinas)
     {
         Professor professor = new Professor();
@@ -238,13 +253,14 @@ public class TesteService
         for(Horario horario : horarios)
         {
             System.out.println("Indivíduo nº"+i+":");
-            TesteService.exibirHorario(horario.getHorario());
+            TesteService.exibirHorario(horario.getNota(), horario.getHorario());
             i++;
         }
     }
     
-    public static void exibirHorario(String horario)
-    {
+    public static void exibirHorario(Integer nota, String horario)
+    {        
+        System.out.println("Nota:" + nota);
         horario = horario.replace("]", "");
         horario = horario.replace("[", "");
         horario = horario.replace(" ", "");

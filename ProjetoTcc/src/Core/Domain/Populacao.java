@@ -83,5 +83,10 @@ public class Populacao
     {
         this.individuos.add(individuo);
     }
+    
+    public Integer countIndividuos()
+    {
+        return this.individuos.size();
+    }
 
 }

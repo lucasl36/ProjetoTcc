@@ -20,8 +20,10 @@ public class PopulacaoService
     public static final Integer defaultCromossomosPeriodo = 25;
     /* Quantiade de Cromossomos por Indivíduo */
     public static final Integer defaultCromossomosTotal = 150;
-    /* Quantiade de Indivíduos por População */
+    /* Quantidade de Indivíduos por População */
     public static final Integer defaultIndividuosPopulacao = 50;
+    /* Variável para Matária livre */
+    public static final String defaultEmptyClass = "0000";
 
     public Populacao inicializarPopulacao(Integer numIndividuos, ArrayList<Materia> materias)
     {
@@ -53,7 +55,7 @@ public class PopulacaoService
     private String[] recuperarMateriasPorPeriodo(ArrayList<Materia> materias)
     {
         String[] materiasPeriodo = new String[PopulacaoService.defaultCromossomosPeriodo];
-        String materiaLivre = "0000";        
+        String materiaLivre = PopulacaoService.defaultEmptyClass;
         
         Integer cargaHorariaTotal = 0;
         int i = 0;
@@ -103,7 +105,7 @@ public class PopulacaoService
         for (String str : periodo2)
         {
             builder.append(str);
-            builder.append(",");
+            builder.append(", ");
         }
         builder.deleteCharAt(builder.length() - 1);
         String periodoXY = builder.toString();

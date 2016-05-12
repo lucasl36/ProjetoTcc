@@ -23,6 +23,13 @@ public class Professor
 
     }
 
+    public boolean verificarDisponibilidade(Integer index)
+    {
+        /* Caso professor esteja disponível retorna TRUE, caso contrário FALSE */
+        boolean disponivel = this.disponibilidade[index] != 1;
+        return disponivel;
+    }
+
     public String getCodigoProfessor()
     {
         return codigoProfessor;
