@@ -4,6 +4,7 @@ import Core.Domain.Horario;
 import Core.Domain.Materia;
 import Core.Domain.Populacao;
 import Core.Domain.Professor;
+import Core.Services.TesteService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -41,6 +42,8 @@ public class Geracao {
         for(int i = 0; i < Geracao.defaultCiclosGeracao; i++)
         {
             Populacao antigaPopulacao = avaliacao.avaliarIndividuos(novaPopulacao, professores);
+            System.out.println("Ciclo nº "+(i+1));
+            TesteService.exibirMediaNotasPopulacao(antigaPopulacao);
             novaPopulacao = reproducao.gerarNovaPopulacao(antigaPopulacao);
             mutacao.mutarPopulacao(novaPopulacao);
             novaPopulacao = selecionarIndividuosMaisAptos(antigaPopulacao, novaPopulacao);

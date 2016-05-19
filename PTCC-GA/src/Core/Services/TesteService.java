@@ -1,5 +1,6 @@
 package Core.Services;
 
+import Core.Components.Criacao;
 import Core.Domain.Disciplina;
 import Core.Domain.Horario;
 import Core.Domain.Materia;
@@ -278,6 +279,35 @@ public class TesteService
                     System.out.println();
             }
         }
+        System.out.println();
+    }
+    
+    public static void exibirMediaNotasPopulacao(Populacao populacao)
+    {
+        Integer maiorNota;
+        Integer menorNota;
+        Integer mediaNotas;
+        
+        maiorNota = populacao.getIndividuos().get(0).getNota();
+        menorNota = populacao.getIndividuos().get(0).getNota();
+        mediaNotas = 0;
+        for(Horario h : populacao.getIndividuos())
+        {
+            if(h.getNota() > maiorNota)
+            {
+                maiorNota = h.getNota();
+            }
+            if(h.getNota() < menorNota)
+            {
+                menorNota = h.getNota();
+            }
+            mediaNotas += h.getNota();
+        }
+        
+        Double media = (double)(mediaNotas / Criacao.defaultIndividuosPopulacao);
+        System.out.println("Media: " + media);
+        System.out.println("Maior Nota: " + maiorNota);
+        System.out.println("Menos Nota: " + menorNota);
         System.out.println();
     }
     
