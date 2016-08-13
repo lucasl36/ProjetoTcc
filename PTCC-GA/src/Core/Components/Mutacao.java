@@ -11,7 +11,8 @@ import Core.Services.FormatoService;
 public class Mutacao {
 
     /* Chance da Mutacao Ocorrer */
-    public static final double defaultPercentualMutacao = 0.4;
+    public static final double defaultPercentualMutacao = 0.4
+            ;
     
     public void mutarPopulacao(Populacao populacao)
     {

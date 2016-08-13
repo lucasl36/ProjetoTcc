@@ -1,7 +1,6 @@
 package Core.Components;
 
 import Core.Domain.Horario;
-import Core.Domain.Materia;
 import Core.Domain.Populacao;
 import Core.Domain.Professor;
 import Core.Services.TesteService;
@@ -16,7 +15,7 @@ import java.util.Comparator;
 public class Geracao {
     
     /* Quantidade de Ciclos no processo de Gerações */
-    public static final Integer defaultCiclosGeracao = 50;
+    public static final Integer defaultCiclosGeracao = 100;
     /* Quantidade de individuos que continuaram na população seguinte */
     public static final Integer defaultIndividuosElite = 5;
     
@@ -42,11 +41,11 @@ public class Geracao {
         for(int i = 0; i < Geracao.defaultCiclosGeracao; i++)
         {
             Populacao antigaPopulacao = avaliacao.avaliarIndividuos(novaPopulacao, professores);
-            System.out.println("Ciclo nº "+(i+1));
-            TesteService.exibirMediaNotasPopulacao(antigaPopulacao);
+//            System.out.println("Ciclo nº "+(i+1));
+//            TesteService.exibirMediaNotasPopulacao(antigaPopulacao);
             novaPopulacao = reproducao.gerarNovaPopulacao(antigaPopulacao);
             mutacao.mutarPopulacao(novaPopulacao);
-            novaPopulacao = selecionarIndividuosMaisAptos(antigaPopulacao, novaPopulacao);
+            novaPopulacao = this.selecionarIndividuosMaisAptos(antigaPopulacao, novaPopulacao);
         }
         return novaPopulacao;
     }

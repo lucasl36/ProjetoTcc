@@ -31,7 +31,8 @@ public class Main
         
         Geracao geracao = new Geracao();
         Populacao populacaoFinal = geracao.executarProcessoGeracao(populacaoInicial, professores);
+        TesteService.exibirMelhorIndividuoPopulacao(populacaoFinal, materias);
         
-        TesteService.exibirPopulacao(populacaoFinal);
+//        TesteService.exibirPopulacao(populacaoFinal);
     }
 }
