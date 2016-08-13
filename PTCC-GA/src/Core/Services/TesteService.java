@@ -291,80 +291,76 @@ public class TesteService
         horario = horario.replace(" ", "");
         String[] arrayHorario = horario.split(",");
 
-        for (int i = 0; i < 25; i++)
+        for(int i = 0;i < 25; i++)
         {
-            for (int j = 0; j < 6; j++)
-            {
-                Materia materia = TesteService.encontrarMateriaCodigo(arrayHorario[i], materias);
-                if (materia.getProfessor() != null && materia.getDisciplina() != null)
-                {
-                    System.out.print(materia.getProfessor().getNome());
-                    System.out.print(" - ");
-                    System.out.print(materia.getDisciplina().getNome());
-                } else
-                {
-                    System.out.print("vazio : vazio");
-                }
-                System.out.printf("\t");
-            }
-
-            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i + 25], materias);
+            Materia materia = TesteService.encontrarMateriaCodigo(arrayHorario[i], materias);
             if (materia.getProfessor() != null && materia.getDisciplina() != null)
             {
                 System.out.print(materia.getProfessor().getNome());
-                System.out.print(" - ");
+                System.out.print(" : ");
                 System.out.print(materia.getDisciplina().getNome());
-            } else
+            }else
             {
                 System.out.print("vazio : vazio");
             }
             System.out.printf("\t");
-            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i + 50], materias);
+            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i+25], materias);
             if (materia.getProfessor() != null && materia.getDisciplina() != null)
             {
                 System.out.print(materia.getProfessor().getNome());
-                System.out.print(" - ");
+                System.out.print(" : ");
                 System.out.print(materia.getDisciplina().getNome());
-            } else
+            }else
             {
                 System.out.print("vazio : vazio");
             }
             System.out.printf("\t");
-            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i + 75], materias);
+            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i+50], materias);
             if (materia.getProfessor() != null && materia.getDisciplina() != null)
             {
                 System.out.print(materia.getProfessor().getNome());
-                System.out.print(" - ");
+                System.out.print(" : ");
                 System.out.print(materia.getDisciplina().getNome());
-            } else
+            }else
             {
                 System.out.print("vazio : vazio");
             }
             System.out.printf("\t");
-            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i + 100], materias);
+            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i+75], materias);
             if (materia.getProfessor() != null && materia.getDisciplina() != null)
             {
                 System.out.print(materia.getProfessor().getNome());
-                System.out.print(" - ");
+                System.out.print(" : ");
                 System.out.print(materia.getDisciplina().getNome());
-            } else
+            }else
             {
-                System.out.print("vazio - vazio");
+                System.out.print("vazio : vazio");
             }
             System.out.printf("\t");
-            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i + 125], materias);
+            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i+100], materias);
             if (materia.getProfessor() != null && materia.getDisciplina() != null)
             {
                 System.out.print(materia.getProfessor().getNome());
-                System.out.print(" - ");
+                System.out.print(" : ");
                 System.out.print(materia.getDisciplina().getNome());
-            } else
+            }else
+            {
+                System.out.print("vazio : vazio");
+            }
+            System.out.printf("\t");
+            materia = TesteService.encontrarMateriaCodigo(arrayHorario[i+125], materias);
+            if (materia.getProfessor() != null && materia.getDisciplina() != null)
+            {
+                System.out.print(materia.getProfessor().getNome());
+                System.out.print(" : ");
+                System.out.print(materia.getDisciplina().getNome());
+            }else
             {
                 System.out.print("vazio : vazio");
             }
             System.out.println();
         }
-
+                    
     }
 
     private static Materia encontrarMateriaCodigo(String codigoMateria, ArrayList<Materia> materias)
