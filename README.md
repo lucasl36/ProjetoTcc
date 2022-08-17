@@ -1,2 +1,2 @@
-# Projeto de TCC
-Trabalho para conclusão do curso de Análise e Desenvolvimento de Sistemas voltado para a área de Inteligência Artificial, mais especificamente falando para a Alocação de Horários utilizando Algoritmos Genéticos.
+# Final project for Analysis and System Development school
+Schedule generation based on genetic algorithms for the ASD educational program
