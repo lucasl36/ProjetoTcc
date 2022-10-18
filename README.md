@@ -1,2 +1,4 @@
-# Final project for Analysis and System Development school
+# Final Project for ASD school
 Schedule generation based on genetic algorithms for the ASD educational program
+
+
